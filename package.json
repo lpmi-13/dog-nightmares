@@ -1,7 +1,7 @@
 {
-  "name": "DawgzResty",
+  "name": "DogNightmares",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -11,14 +11,18 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-community/picker": "^1.6.5",
     "@react-navigation/native": "^5.7.1",
     "@react-navigation/stack": "^5.7.1",
     "react": "16.13.1",
     "react-native": "0.63.1",
     "react-native-gesture-handler": "^1.6.1",
+    "react-native-picker-select": "^8.0.0",
     "react-native-reanimated": "^1.9.0",
     "react-native-safe-area-context": "^3.1.1",
-    "react-native-screens": "^2.9.0"
+    "react-native-screens": "^2.9.0",
+    "react-native-signature-canvas": "^3.1.0",
+    "react-native-webview": "^10.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
