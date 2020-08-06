@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 import PickerSelect from 'react-native-picker-select';
 
 const RestaurantPage3 = ({ navigation }) => {
@@ -23,11 +23,14 @@ const RestaurantPage3 = ({ navigation }) => {
               ]}
               value={selectedValue}
               />
-              <Button
+              <TouchableOpacity
+                activeOpacity={0.6}
                 style={styles.button}
                 title="Let's see the advice!" 
                 onPress={() => navigation.navigate('RestaurantPage4')}
-              />
+              >
+              <Text style={styles.buttonText}>See the personalized advice</Text>
+              </TouchableOpacity>
         </View>
     )
 }
@@ -39,6 +42,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#021E4D',
     alignItems: 'center',
     alignContent: 'space-around',
+  },
+  button: {
+    width: '80%',
+    height: 40,
+    justifyContent: 'center',
+    backgroundColor: '#EE5407',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 24,
+    textAlign: 'center',
   },
   inputIOS: {
     fontSize: 16,

@@ -10,7 +10,7 @@ const HomeScreen = ({ navigation }) => {
           style={styles.button}
           title="I have a dog"
           onPress={() =>
-            navigation.navigate('Dogs')
+            navigation.navigate('DogsPage1')
           }
         />
       </View>
