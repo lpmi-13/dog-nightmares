@@ -10,6 +10,7 @@ import {
   DogsPage2,
   DogsPage3,
   DogsPage4,
+  DogsPage5,
   RestaurantPage1,
   RestaurantPage2,
   RestaurantPage3,
@@ -31,6 +32,7 @@ const App = () => {
         <Stack.Screen name="DogsPage2" component={DogsPage2} />
         <Stack.Screen name="DogsPage3" component={DogsPage3} />
         <Stack.Screen name="DogsPage4" component={DogsPage4} />
+        <Stack.Screen name="DogsPage5" component={DogsPage5} />
         <Stack.Screen name="RestaurantPage1" component={RestaurantPage1} />
         <Stack.Screen name="RestaurantPage2" component={RestaurantPage2} />
         <Stack.Screen name="RestaurantPage3" component={RestaurantPage3} />

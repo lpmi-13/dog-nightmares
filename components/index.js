@@ -4,6 +4,7 @@ import DogsPage1 from './DogsPage1';
 import DogsPage2 from './DogsPage2';
 import DogsPage3 from './DogsPage3';
 import DogsPage4 from './DogsPage4';
+import DogsPage5 from './DogsPage5';
 
 import RestaurantPage1 from './RestaurantPage1';
 import RestaurantPage2 from './RestaurantPage2';
@@ -16,6 +17,7 @@ export {
     DogsPage2,
     DogsPage3,
     DogsPage4,
+    DogsPage5,
     RestaurantPage1,
     RestaurantPage2,
     RestaurantPage3,

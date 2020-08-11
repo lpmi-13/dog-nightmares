@@ -1,15 +1,61 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { PERMISSIONS, check, request, RESULTS } from 'react-native-permissions';
 import AudioRecord from 'react-native-audio-record';
+//import { Buffer } from 'buffer';
 
 const options = {
   sampleRate: 16000,
   channels: 1,
   bitsPerSample: 16,
   audioSource: 6,
-  wavFile: 'breathing.wav',
+  //wavFile: 'breathing.wav',
 };
+
+const handleStartRecording = () => {
+  //let chunk;
+  AudioRecord.init(options);
+  AudioRecord.start();
+  //AudioRecord.on('data', data => {
+  //  chunk = Buffer.from(data, 'base64');
+  //  console.log(chunk);
+  //});
+  console.log('started recording')
+}
+
+const handleStopRecording = () => {
+  AudioRecord.stop();
+  console.log('stopped recording')
+}
+
+const RecordBreathingComponent = ({ navigation }) => {
+  const [pressed, setPressed] = useState(false);
+
+  return (
+    <View style={styles.container}>
+      <Pressable
+      style={({pressed}) => [
+            {
+              backgroundColor: pressed ? 'red' : 'blue',
+            },
+            styles.button,
+          ]}
+        onPressIn={() => {
+          handleStartRecording(),
+          setPressed(true)
+        }}
+        onPressOut={() => {
+          handleStopRecording(),
+          setPressed(false),
+          navigation.navigate('DogsPage4')
+        }}
+        >
+        <Text>Record Your Dog Breathing</Text>
+      </Pressable>
+      <Text style={styles.recording}>{pressed ? 'Recording now!' : null}</Text>
+    </View>
+  )
+}
 
 const DogsPage3 = ({ navigation }) => {
   const [microphoneGranted, setMicrophoneGranted] = useState(false);
@@ -26,15 +72,6 @@ const DogsPage3 = ({ navigation }) => {
     }
   }
 
-  const handleStartRecording = () => {
-    AudioRecord.init(options);
-    AudioRecord.start();
-    AudioRecord.on('data', data)
-  }
-
-  const handleStopRecording = () => {
-    AudioRecord.stop();
-  }
 
   useEffect(() => {
     handleMicrophonePermission();
@@ -43,7 +80,7 @@ const DogsPage3 = ({ navigation }) => {
     return (
         <View style={styles.container}>
             {microphoneGranted
-              ? <Text style={styles.text}>Record your dog breathing</Text>
+              ? <RecordBreathingComponent navigation={navigation} />
               : <Text style={styles.text}>Please enable the microphone</Text>
             }
         </View>
@@ -51,11 +88,23 @@ const DogsPage3 = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    borderRadius: 8,
+    padding: 6,
+    height: 50,
+    width: '70%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 5,
+  },
   container: {
     flex: 1,
     backgroundColor: '#C28021',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+  },
+  recording: {
+    fontSize: 20, 
   },
   text: {
     color: '#fff',

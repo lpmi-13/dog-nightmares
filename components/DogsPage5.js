@@ -2,12 +2,12 @@ import React from 'react';
 import { Button, FlatList, StyleSheet, Text, View } from 'react-native';
 
 const data = [
-  { key: `Don't freeze your food!`},
-  { key: `Reduce the size of your menu!`},
-  { key: `Clean your kitchen!`},
+  { key: `Walk your dog!`},
+  { key: `Don't treat your dog like a person!`},
+  { key: `Your dog's not afraid/worried/upset, you are!`},
 ]
 
-const RestaurantPage4 = ({ navigation }) => {
+const DogsPage5 = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
@@ -17,7 +17,6 @@ const RestaurantPage4 = ({ navigation }) => {
             renderItem={({ item }) => <Text style={styles.item}>{item.key}</Text>}
           />
           <Button
-                style={styles.button}
                 title="Thanks, I'll go back home now" 
                 onPress={() => navigation.navigate('Home')}
               />
@@ -28,7 +27,7 @@ const RestaurantPage4 = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#021E4D',
+    backgroundColor: '#C28021',
     alignItems: 'center',
     justifyContent: 'space-around',
   },
@@ -45,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RestaurantPage4;
+export default DogsPage5;

@@ -1,10 +1,18 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
-const DogsPage1 = () => {
+const DogsPage4 = ({ navigation }) => {
+  const [value, onChangeText] = useState('');
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>This is the dogs page</Text>
+        <Text style={styles.text}>What is your dog's weight in sandwiches?</Text>
+            <TextInput style={styles.input} onChangeText={text => onChangeText(text)} value={value} />
+            <View>
+              <Button
+                title="See the advice" 
+                onPress={() => navigation.navigate('DogsPage5')}
+              />
+            </View>
         </View>
     )
 }
@@ -16,10 +24,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    color: '#fff',
+    height: 40,
+    margin: 50,
+    borderColor: 'gray',
+    borderWidth: 3,
+    width: "80%",
+  },
   text: {
     color: '#fff',
     fontSize: 20,
   }
 });
 
-export default DogsPage1;
+export default DogsPage4;
