@@ -28,6 +28,8 @@ build/
 .gradle
 local.properties
 *.iml
+# hackish, but this is quick and easy for now
+android/gradle.properties
 
 # node.js
 #
@@ -57,3 +59,6 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# misc
+.notes

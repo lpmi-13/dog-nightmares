@@ -34,3 +34,17 @@ npm start (to set up the metro server)
 ### for ios
 
 (haven't got there yet...)
+
+
+## Building for native platforms
+
+- we're gonna use fastlane, which requires ruby dependencies, so make sure you have ruby installed
+- then install the fastlane gem
+
+```bash
+gem install fastlane
+```
+
+### Android
+
+
