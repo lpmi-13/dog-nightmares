@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:14-alpine'
+        }
+    }
 
     options {
         timeout(time: 1, unit: 'HOURS')
