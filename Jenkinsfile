@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'node:14-alpine' }
+    }
 
     options {
         timeout(time: 1, unit: 'HOURS')
@@ -14,6 +16,8 @@ pipeline {
         stage('build it') {
             steps {
                 ansiColor('xterm') {
+                    sh 'echo $PATH'
+                    sh 'which npm'
                     sh 'npm ci'
                     sh 'npm run test'
                 }
